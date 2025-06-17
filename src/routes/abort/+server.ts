@@ -1,3 +1,5 @@
+import { logs } from "../../lib/storage.server.js";
+
 export function GET({ request }) {
     return new Promise((resolve, reject) => {
         const timeout = setTimeout(() => {
@@ -6,7 +8,7 @@ export function GET({ request }) {
 
         request.signal.onabort = () => {
             clearTimeout(timeout);
-            console.log("Client aborted before server could respond!");
+            logs.add(`[${Date.now()}] Client aborted before server could respond!`);
         };
     });
 }
