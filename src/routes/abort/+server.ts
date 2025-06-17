@@ -1,9 +1,10 @@
-import { logs } from "../../lib/storage.server.js";
+let logs = new Set();
 
 export function GET({ request }) {
     return new Promise((resolve, reject) => {
         const timeout = setTimeout(() => {
-            resolve(new Response("OK"));
+            const logsArray = Array.from(logs);
+            resolve(new Response(`OK\n${logsArray.join("\n")}`));
         }, 3 * 1000);
 
         request.signal.onabort = () => {
