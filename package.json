@@ -12,8 +12,6 @@
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
     },
     "devDependencies": {
-        "@fontsource/fira-mono": "^5.0.0",
-        "@neoconfetti/svelte": "^2.0.0",
         "@sveltejs/adapter-node": "https://pkg.pr.new/sveltejs/kit/@sveltejs/adapter-node@13895",
         "@sveltejs/kit": "https://pkg.pr.new/sveltejs/kit/@sveltejs/kit@13895",
         "@sveltejs/vite-plugin-svelte": "^5.0.0",
